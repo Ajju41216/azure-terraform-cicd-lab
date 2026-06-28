@@ -27,7 +27,7 @@ resource "azurerm_resource_group" "rg1" {
 
 resource "azurerm_storage_account" "stgAcc" {
   depends_on = [ azurerm_resource_group.rg1 ]
-  name                     = "messy007devinfra"
+  name                     = "messy03456devinfra"
   resource_group_name      = "rg-dhondhu"
   location                 = "Central India"
   account_tier             = "Standard"
