@@ -37,3 +37,9 @@ resource "azurerm_storage_account" "stgAcc" {
     environment = "dev"
   }
 }
+
+resource "azurerm_resource_group" "network" {
+  name     = "rg-dhondhu"
+  location = "Central India"
+  
+}
