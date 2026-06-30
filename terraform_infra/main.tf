@@ -38,8 +38,8 @@ resource "azurerm_storage_account" "stgAcc" {
   }
 }
 
-resource "azurerm_resource_group" "network" {
-  name     = "rg-dhondhu"
-  location = "Central India"
+# resource "azurerm_resource_group" "network" {
+#   name     = "rg-dhondhu"
+#   location = "Central India"
   
-}
+# }
