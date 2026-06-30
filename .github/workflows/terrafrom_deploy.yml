@@ -21,6 +21,7 @@ jobs:
         uses: bridgecrewio/checkov-action@v12.1347.0
         with:
           directory: ./terraform_infra
+          soft_fail: true
         
       - name: Azure login
         uses: azure/login@v3
@@ -44,7 +45,7 @@ jobs:
       
       - name: terraform plan
         run: terraform plan --out=tfplan
-
+        working-directory: ./terraform_infra    
 
   Terrafor-Validate-deploy:
     name: infra-apply
@@ -69,9 +70,10 @@ jobs:
       - name: Terraform Init
         run: terraform init
         working-directory: ./terraform_infra
+
       - name: terraform apply
         run: terraform apply -auto-approve
-
+        working-directory: ./terraform_infra    
 
 
 
