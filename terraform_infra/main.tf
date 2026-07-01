@@ -5,12 +5,12 @@ terraform {
       version = "4.78.0"
     }
   }
-  backend "azurerm" {
-    resource_group_name  = "terraformBackend-rg"
-    storage_account_name = "terraforms23tatemgrdev"  # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
-    container_name       = "tfstate"               # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
-    key                  = "dev.terraform.tfstate" # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
-  }
+  # backend "azurerm" {
+  #   resource_group_name  = "terraformBackend-rg"
+  #   storage_account_name = "terraforms23tatemgrdev"  # Can be passed via `-backend-config=`"storage_account_name=<storage account name>"` in the `init` command.
+  #   container_name       = "tfstate"               # Can be passed via `-backend-config=`"container_name=<container name>"` in the `init` command.
+  #   key                  = "dev.terraform.tfstate" # Can be passed via `-backend-config=`"key=<blob key name>"` in the `init` command.
+  # }
 }
 
 provider "azurerm" {
@@ -76,7 +76,7 @@ resource "azurerm_linux_virtual_machine" "vm_block" {
   name                            = "vm-ci"
   resource_group_name             = azurerm_resource_group.rg1.name
   location                        = azurerm_resource_group.rg1.location
-  size                            = "Standard_B1s"
+  size                            = "Standard_D2s_v3"
   admin_username                  = "azureuser"
   admin_password                  = "Password@1234"
   disable_password_authentication = false
