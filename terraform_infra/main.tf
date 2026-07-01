@@ -59,6 +59,26 @@ resource "azurerm_public_ip" "vm_pip" {
   sku                 = "Standard"
 }
 
+resource "azurerm_network_security_group" "frontend_nsg" {
+  name                = "nsg-grp1"
+  location            = azurerm_resource_group.rg1.location
+  resource_group_name = azurerm_resource_group.rg1.name
+}
+
+resource "azurerm_network_security_rule" "frontend_rules" {
+    name                       = "ssg"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_ranges    = ["22"]
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+    resource_group_name         = azurerm_resource_group.rg1.name
+    network_security_group_name = azurerm_network_security_group.frontend_nsg.name
+}
+
 resource "azurerm_network_interface" "vms_nic" {
   name                = "rg_nic"
   location            = azurerm_resource_group.rg1.location
@@ -100,3 +120,7 @@ resource "azurerm_linux_virtual_machine" "vm_block" {
   tags = merge(var.base_tags, var.custom_tags)
 }
 
+resource "azurerm_subnet_network_security_group_association" "subnet_nsg" {
+  subnet_id                 = azurerm_subnet.subnet1.id
+  network_security_group_id = azurerm_network_security_group.frontend_nsg.id
+}
