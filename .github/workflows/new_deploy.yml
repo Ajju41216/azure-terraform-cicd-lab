@@ -52,6 +52,14 @@ jobs:
         run: terraform validate
         working-directory: ./terraform_infra/root
       
+      - name: Debug Terraform Context
+        working-directory: ./terraform_infra/root
+        run: |
+          pwd
+          ls -la
+          echo "---- tfvars content ----"
+          cat terraform.tfvars      
+
       - name: terraform plan
       #  run: terraform plan --out=tfplan
         working-directory: ./terraform_infra/root
