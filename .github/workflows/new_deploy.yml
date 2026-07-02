@@ -46,15 +46,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./terraform_infra
+        working-directory: ./terraform_infra/root
 
       - name: Terraform Validate
         run: terraform validate
-        working-directory: ./terraform_infra
+        working-directory: ./terraform_infra/root
       
       - name: terraform plan
         run: terraform plan --out=tfplan
-        working-directory: ./terraform_infra    
+        working-directory: ./terraform_infra/root
 
   Terrafor-Validate-deploy:
     name: infra-apply
@@ -78,8 +78,8 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./terraform_infra
+        working-directory: ./terraform_infra/root
 
       - name: terraform apply
         run: terraform apply -auto-approve
-        working-directory: ./terraform_infra
+        working-directory: ./terraform_infra/root
