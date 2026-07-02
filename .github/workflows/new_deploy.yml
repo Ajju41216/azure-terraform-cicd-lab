@@ -53,8 +53,9 @@ jobs:
         working-directory: ./terraform_infra/root
       
       - name: terraform plan
-        run: terraform plan --out=tfplan
+      #  run: terraform plan --out=tfplan
         working-directory: ./terraform_infra/root
+        run: terraform plan -input=false -out=tfplan
 
   Terrafor-Validate-deploy:
     name: infra-apply

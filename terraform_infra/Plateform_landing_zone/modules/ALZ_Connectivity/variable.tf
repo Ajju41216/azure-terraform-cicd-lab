@@ -1,7 +1,8 @@
 variable "connectivity" {
-    type = map(object({
-        name = string
-        location = string
-    }))
-  
+  type = map(object({
+    name                = string
+    location            = string
+    resource_group_name = string
+    address_space       = list(string)
+  }))
 }

@@ -4,3 +4,8 @@ module "rg" {
   source = "../Plateform_landing_zone/modules/management"
   rgs = var.rgs
 }
+
+module "network" {
+  source = "../Plateform_landing_zone/modules/ALZ_Connectivity"
+  connectivity = var.connectivity
+}
