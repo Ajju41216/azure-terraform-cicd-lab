@@ -6,6 +6,7 @@ module "rg" {
 }
 
 module "network" {
+  depends_on = [ module.rg ]
   source = "../Plateform_landing_zone/modules/ALZ_Connectivity"
   connectivity = var.connectivity
 }
