@@ -1,12 +1,17 @@
-# thie is root directory to this landzind Zone ?
-
 module "rg" {
-  source = "../Plateform_landing_zone/modules/management"
-  rgs = var.rgs
+  source = "../Plateform_landing_zone/management"
+  rgs    = var.rgs
 }
 
-module "network" {
+module "vne" {
   depends_on = [ module.rg ]
-  source = "../Plateform_landing_zone/modules/ALZ_Connectivity"
-  connectivity = var.connectivity
+  source = "../Plateform_landing_zone/hub-network"
+  hvet   = var.hvet
+}
+
+module "sb" {
+  depends_on = [ module.vne ]
+  source = "../Plateform_landing_zone/Hub_subnets"
+  hsubnet = var.hsubnet
+
 }

@@ -1,24 +1,49 @@
 rgs = {
   rg1 = {
-    name     = "management"
-    location = "eastus"
+    name     = "RG-Network"
+    location = "Central India"
   }
 
   rg2 = {
-    name     = "hub"
-    location = "eastus"
+    name     = "RG-Management"
+    location = "Central India"
+  }
+
+  rg3 = {
+    name     = "RG-Identity"
+    location = "Central India"
   }
 
 }
 
-connectivity = {
-  vnet1 = {
-    name                = "vnet-eastus"
-    location            = "eastus"
-    resource_group_name = "hub"
+hvet = {
 
-    address_space = [
-      "10.0.0.0/16"
-    ]
+  mainvet = {
+
+    name = "HubVNet"
+
+    location = "Central India"
+
+    resource_group_name = "RG-Network"
+
+    address_space = ["10.0.0.0/16"]
+
   }
+
 }
+
+hsubnet = {
+
+  firwallsubnet = {
+    name = "AzureFirewallSubnet"
+
+    resource_group_name = "RG-Network"
+
+    address_prefixes = ["10.0.1.0/26"]
+
+    virtual_network_name = "HubVNet"
+
+  }
+
+}
+

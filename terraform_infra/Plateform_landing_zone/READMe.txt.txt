@@ -1,1 +1,0 @@
-these are my child modules that i am using in platform under Azure landing zone. 
