@@ -45,5 +45,15 @@ hsubnet = {
 
   }
 
+  sharedserveries = {
+    name = "SharedServicesSubnet"
+
+    resource_group_name = "RG-Network"
+
+    address_prefixes = ["10.0.1.0/26"]
+
+    virtual_network_name = "HubVNet"
+
+  }
 }
 
