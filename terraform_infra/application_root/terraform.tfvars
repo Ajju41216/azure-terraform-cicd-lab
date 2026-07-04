@@ -1,16 +1,16 @@
 spoke_rgs = {
   rg1 = {
-    name     = "RG-Network"
+    name     = "rg-spoke"
     location = "Central India"
   }
 
   rg2 = {
-    name     = "RG-Management"
+    name     = "spoke-mgmt"
     location = "Central India"
   }
 
   rg3 = {
-    name     = "RG-Identity"
+    name     = "spoke-mgmt"
     location = "Central India"
   }
 
@@ -20,11 +20,11 @@ spoke_vnet = {
 
   mainvet = {
 
-    name = "HubVNet"
+    name = "spokevnet"
 
     location = "Central India"
 
-    resource_group_name = "RG-Network"
+    resource_group_name = "rg-spoke"
 
     address_space = ["10.1.0.0/16"]
 
@@ -34,59 +34,49 @@ spoke_vnet = {
 
 spoke_subnet = {
 
-  firwallsubnet = {
-    name = "AppGatewaySubnet"
+  app1 = {
+    name = "nginx_frontend"
 
-    resource_group_name = "RG-Network"
+    resource_group_name = "rg-spoke"
 
     address_prefixes = ["10.1.1.0/26"]
 
-    virtual_network_name = "HubVNet"
+    virtual_network_name = "spokevnet"
 
   }
 
-  frountendsub = {
+  app2 = {
 
-    name = "FrontendSubnet"
+    name = "app_backend"
 
-    resource_group_name = "RG-Network"
+    resource_group_name = "rg-spoke"
 
     address_prefixes = ["10.1.2.0/24"]
 
-    virtual_network_name = "HubVNet"
+    virtual_network_name = "spokevnet"
 
   }
-  backendsub = {
+  app3 = {
 
-    name = "BackendSubnet"
+    name = "database"
 
-    resource_group_name = "RG-Network"
+    resource_group_name = "rg-spoke"
 
     address_prefixes = ["10.1.3.0/24"]
 
-    virtual_network_name = "HubVNet"
+    virtual_network_name = "spokevnet"
   }
 
-    databasesub = {
-
-    name = "DatabaseSubnet"
-
-    resource_group_name = "RG-Network"
-
-    address_prefixes = ["10.1.4.0/24"]
-
-    virtual_network_name = "HubVNet"
-  }
    
     privateendpointsub = {
 
     name = "PrivateEndpointSubnet"
 
-    resource_group_name = "RG-Network"
+    resource_group_name = "rg-spoke"
 
     address_prefixes = ["10.1.5.0/26"]
 
-    virtual_network_name = "HubVNet"
+    virtual_network_name = "spokevnet"
   }
 }
 
