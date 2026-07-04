@@ -1,16 +1,16 @@
 rgs = {
   rg1 = {
-    name     = "RG-Network"
+    name     = "hub-rg-network"
     location = "Central India"
   }
 
   rg2 = {
-    name     = "RG-Management"
+    name     = "hub-rg-management"
     location = "Central India"
   }
 
   rg3 = {
-    name     = "RG-Identity"
+    name     = "hub- rg-identity"
     location = "Central India"
   }
 
@@ -24,7 +24,7 @@ hvet = {
 
     location = "Central India"
 
-    resource_group_name = "RG-Network"
+    resource_group_name = "hub-rg-network"
 
     address_space = ["10.0.0.0/16"]
 
@@ -34,10 +34,10 @@ hvet = {
 
 hsubnet = {
 
-  firwallsubnet = {
+  firewall = {
     name = "AzureFirewallSubnet"
 
-    resource_group_name = "RG-Network"
+    resource_group_name = "hub-rg-network"
 
     address_prefixes = ["10.0.1.0/26"]
 
@@ -45,10 +45,46 @@ hsubnet = {
 
   }
 
-  sharedserveries = {
+  sharedservices = {
     name = "SharedServicesSubnet"
 
-    resource_group_name = "RG-Network"
+    resource_group_name = "hub-rg-network"
+
+    address_prefixes = ["10.0.1.0/26"]
+
+    virtual_network_name = "HubVNet"
+
+  }
+
+  dns = {
+
+    name = "DNSResolverSubnet"
+
+    resource_group_name = "hub-rg-network"
+
+    address_prefixes = ["10.0.1.0/26"]
+
+    virtual_network_name = "HubVNet"
+
+  }
+
+  gateway = {
+
+    name = "GatewaySubnet"
+
+    resource_group_name = "hub-rg-network"
+
+    address_prefixes = ["10.0.1.0/26"]
+
+    virtual_network_name = "HubVNet"
+
+  }
+
+  Privaetendpoint = {
+
+    name = "PrivateEndpointSubnet"
+
+    resource_group_name = "hub-rg-network"
 
     address_prefixes = ["10.0.1.0/26"]
 
