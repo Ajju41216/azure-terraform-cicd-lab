@@ -12,7 +12,7 @@ module "spokenetwork" {
   }
 
 module "spoke_subnet" {
-    depends_on = [ var.spoke_vnet ]
+  depends_on = [ var.spoke_vnet ]
   source = "../application_landing_zone/spoke_subnet"
   spoke_subnet = var.spoke_subnet
 }

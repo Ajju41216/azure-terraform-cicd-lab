@@ -1,12 +1,17 @@
 name: "C - Terraform deploy"
 
 on:
-  push:
-    branches:
-      - "main"
   pull_request:
     branches:
-      - "main"
+      - main
+  workflow_dispatch:
+# on:
+#   push:
+#     branches:
+#       - "main"
+#   pull_request:
+#     branches:
+#       - "main"
       
 permissions:
   id-token: write
@@ -86,8 +91,4 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./terraform_infra/application_root
-
-      - name: terraform apply
-        run: terraform apply -auto-approve
         working-directory: ./terraform_infra/application_root
