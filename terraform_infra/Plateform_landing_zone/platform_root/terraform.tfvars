@@ -14,6 +14,11 @@ rgs = {
     location = "Central India"
   }
 
+  rg4 = {
+    name     = "hub- rg-security"
+    location = "Central India"
+  }
+
 }
 
 hvet = {
