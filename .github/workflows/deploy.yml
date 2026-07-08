@@ -32,7 +32,7 @@ jobs:
       - name: Checkov Scurity scan
         uses: bridgecrewio/checkov-action@v12.1347.0
         with:
-          directory: ./terraform_infra/application_root
+          working-directory: ./terraform_infra\Plateform_landing_zone\platform_root
           soft_fail: true
         
       - name: Azure login
@@ -47,13 +47,13 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./terraform_infra/application_root
+        working-directory: ./terraform_infra\Plateform_landing_zone\platform_root
 
       - name: Terraform Validate
         run: terraform validate
-        working-directory: ./terraform_infra/application_root
+        working-directory: ./terraform_infra\Plateform_landing_zone\platform_root
       - name: Debug Terraform Context
-        working-directory: ./terraform_infra/application_root
+        working-directory: ./terraform_infra\Plateform_landing_zone\platform_root
         run: |
           pwd
           ls -la
@@ -62,7 +62,7 @@ jobs:
 
       - name: terraform plan
       #  run: terraform plan --out=tfplan
-        working-directory: ./terraform_infra/application_root
+        working-directory: ./terraform_infra\Plateform_landing_zone\platform_root
         run: terraform plan -input=false -out=tfplan
 
   Terrafor-Validate-deploy:
@@ -87,4 +87,4 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./terraform_infra/application_root
+        working-directory: ./terraform_infra\Plateform_landing_zone\platform_root
