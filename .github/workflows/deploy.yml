@@ -88,3 +88,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
         working-directory: ./terraform_infra/Plateform_landing_zone/platform_root
+
+      - name: Terraform apply
+        run: terraform apply -auto-approve
+        working-directory: ./terraform_infra/Plateform_landing_zone/platform_root        
