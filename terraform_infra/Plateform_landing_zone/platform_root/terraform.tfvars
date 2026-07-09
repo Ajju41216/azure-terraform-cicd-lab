@@ -4,21 +4,6 @@ rgs = {
     location = "Central India"
   }
 
-  rg2 = {
-    name     = "hub-rg-management"
-    location = "Central India"
-  }
-
-  rg3 = {
-    name     = "hub- rg-identity"
-    location = "Central India"
-  }
-
-  rg4 = {
-    name     = "hub- rg-security"
-    location = "Central India"
-  }
-
 }
 
 hvet = {
