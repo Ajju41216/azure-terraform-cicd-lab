@@ -40,7 +40,7 @@ hsubnet = {
 
     resource_group_name = "hub-rg-network"
 
-    address_prefixes = ["10.0.1.0/26"]
+    address_prefixes = ["10.0.2.0/26"]
 
     virtual_network_name = "HubVNet"
 
@@ -52,7 +52,7 @@ hsubnet = {
 
     resource_group_name = "hub-rg-network"
 
-    address_prefixes = ["10.0.1.0/26"]
+    address_prefixes = ["10.0.3.0/26"]
 
     virtual_network_name = "HubVNet"
 
@@ -64,7 +64,7 @@ hsubnet = {
 
     resource_group_name = "hub-rg-network"
 
-    address_prefixes = ["10.0.1.0/26"]
+    address_prefixes = ["10.0.4.0/26"]
 
     virtual_network_name = "HubVNet"
 
@@ -76,7 +76,7 @@ hsubnet = {
 
     resource_group_name = "hub-rg-network"
 
-    address_prefixes = ["10.0.1.0/26"]
+    address_prefixes = ["10.0.5.0/26"]
 
     virtual_network_name = "HubVNet"
 
